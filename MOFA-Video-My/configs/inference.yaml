@@ -1,0 +1,31 @@
+output_dir: "/mnt/Diffusion/flask_video/static/videos"
+inference_name: "mofa_stage2_inference"
+
+svd_ckpt: "/mnt/Diffusion/MOFA-Video/ckpts/mofa/stable-video-diffusion-img2vid-xt-1-1"
+mofa_ckpt: "/mnt/Diffusion/MOFA-Video/ckpts/mofa/traj_controlnet"
+unimatch_ckpt: "/mnt/Diffusion/MOFA-Video/ckpts/unimatch/gmflow-scale2-regrefine6-mixdata-train320x576-4e7b215d.pth"
+
+# inference_data: 
+#   # video_dir: "/mnt/Diffusion/AVSync15/test/dog_barking"
+#   video_path: "/mnt/Diffusion/AVSync15/test/dog_barking/_52ntwwQyv4_000070_000080-3.5_9.5.mp4"
+#   sample_size: 512
+#   model_length: 25
+#   # input_image_path: "/mnt/Diffusion/flask_video/static/videos/Multiclass_A2V/samples/dog_and_lion.png"
+
+validation_data:
+  video_folder:    "/mnt/Diffusion/AVSync15/test"
+  # class_subfolder: "/mnt/Diffusion/AVSync15/test/dog_barking"
+  # class_subfolder: "/home/jibin/Github/MOFA-Video/MOFA-Video-My/outputs/sample"
+  sample_size:     384
+  sample_n_frames: 25
+  sample_rate: 16000
+  fps: 8
+
+ctrl_scale: 0.6
+
+global_seed: 1234
+is_debug: false
+
+device: cuda:0
+
+enable_xformers_memory_efficient_attention: True
